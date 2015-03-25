@@ -1,0 +1,91 @@
+
+// ============================================================
+// TYPOGRAPHY 
+// ============================================================
+
+$header-font: 'Raleway', arial, sans-serif;
+$body-font: arial, sans-serif;
+
+html {
+
+	font-size: 100%;
+
+}
+
+body, input, textarea, select, button, p, a {
+
+    @include font(16); 
+    color: $col-black;
+    font-family: $body-font;
+
+}
+
+h1, h3, h4, h5, h6, p {
+
+    margin-bottom: $baseline/1.5;
+    font-family: $header-font;
+    font-weight: 600;
+
+}
+
+h1, .h1, .alpha {
+
+    text-align: center;
+    @include font(48)
+
+}
+
+h2, .h2, .beta {
+
+    @include font(32);
+    color: $col-black;
+
+}
+
+h3, .h3, .gamma {
+
+    @include font(20);
+
+}
+
+h4, .h4, .delta {
+
+    @include font(18);
+
+}
+
+h5, .h5, .epsilon, 
+h6, .h6, .zeta {
+
+   @include font(17);
+
+}
+
+.mega {
+
+	  @include font(72);
+
+}
+
+
+small,
+.tiny {
+
+    @include font(14);
+
+}
+
+strong {
+
+    font-weight: bold;
+
+}
+
+em {
+
+    font-style: italic;
+
+}
+
+
+// ============================================================

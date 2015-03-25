@@ -1,0 +1,44 @@
+
+// ============================================================
+// LINKS 
+// ============================================================
+
+
+$linkColor: $col-blue;
+
+
+a {
+
+	text-decoration: none;
+	color: $linkColor;
+
+	&:link {}
+
+	&:visited {}
+
+	&:hover {
+
+		// text-decoration: underline;
+
+	}
+
+	&.no-td {
+
+		&:hover {
+
+			text-decoration: none;
+
+		}
+
+	}
+
+	&:active {
+
+		//text-decoration: underline;
+
+	}
+
+}
+
+// ============================================================
+
