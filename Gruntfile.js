@@ -56,7 +56,8 @@ module.exports = function(grunt) {
             },
             html: {
                 files: [
-                    'dev/views/**/*.html'
+                    'dev/views/**/*.html',
+                    'dev/views/**/**/*.html'
                 ],
                 tasks: ['copy']
             }

@@ -1,0 +1,11 @@
+
+
+<div ng-class="{active:pulsing}" class="pulser"></div>
+<form action="">
+	<input type="number" min-length="2" max-length="3" ng-model="bpm">
+	<button ng-click="click()" ng-if="bpm" ng-class="{active:running}" class="metronome-start">Start</button>
+</form>
+
+{{run}}
+{{bpm}}
+{{pulsing}}

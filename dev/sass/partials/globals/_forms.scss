@@ -81,6 +81,8 @@ input[type="submit"] {
 	background: $primaryBtnBg;
 	color: $primaryBtnCol;
 	display: inline-block;
+	@include font(16); 
+    font-family: $body-font;
 
 	&:hover {
 

@@ -1,0 +1,25 @@
+
+.metronome {
+
+	.pulser {
+
+		opacity: 0;
+		background: red;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+
+		&.active {
+
+			opacity: 1;
+		}
+	}
+
+	.metronome-start {
+
+		&.active {
+
+			background: green;
+		}
+	}
+}

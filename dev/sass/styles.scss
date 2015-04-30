@@ -25,6 +25,7 @@
 		"mixins/typography",
 
 		// Globals
+		"partials/globals/typography",
 		"partials/globals/core",
 		"partials/globals/blockquotes",
 		"partials/globals/forms",
@@ -33,13 +34,13 @@
 		"partials/globals/lists",
 		"partials/globals/svg",
 		"partials/globals/tables",
-		"partials/globals/typography",
-
+		
 		// Modules
 		"partials/modules/app-layout",
 
 		// Views
 		"../views/song/song",
+		"../views/song/partials/metronome",
 
 		// Misc
 		"misc/helpers",

@@ -63,6 +63,90 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* line 9, ../../dev/sass/partials/globals/_typography.scss */
+html {
+  font-size: 100%;
+}
+
+/* line 15, ../../dev/sass/partials/globals/_typography.scss */
+body, input, textarea, select, p, a {
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 24px;
+  color: #212328;
+  font-family: arial, sans-serif;
+}
+
+/* line 23, ../../dev/sass/partials/globals/_typography.scss */
+h1, h3, h4, h5, h6, p {
+  margin-bottom: 13.33333px;
+  font-family: "Raleway", arial, sans-serif;
+  font-weight: 600;
+}
+
+/* line 31, ../../dev/sass/partials/globals/_typography.scss */
+h1, .h1, .alpha {
+  text-align: center;
+  font-size: 48px;
+  font-size: 3em;
+  line-height: 72px;
+}
+
+/* line 38, ../../dev/sass/partials/globals/_typography.scss */
+h2, .h2, .beta {
+  font-size: 32px;
+  font-size: 2em;
+  line-height: 48px;
+  color: #212328;
+}
+
+/* line 45, ../../dev/sass/partials/globals/_typography.scss */
+h3, .h3, .gamma {
+  font-size: 20px;
+  font-size: 1.25em;
+  line-height: 30px;
+}
+
+/* line 51, ../../dev/sass/partials/globals/_typography.scss */
+h4, .h4, .delta {
+  font-size: 18px;
+  font-size: 1.125em;
+  line-height: 27px;
+}
+
+/* line 58, ../../dev/sass/partials/globals/_typography.scss */
+h5, .h5, .epsilon,
+h6, .h6, .zeta {
+  font-size: 17px;
+  font-size: 1.0625em;
+  line-height: 25.5px;
+}
+
+/* line 64, ../../dev/sass/partials/globals/_typography.scss */
+.mega {
+  font-size: 72px;
+  font-size: 4.5em;
+  line-height: 108px;
+}
+
+/* line 72, ../../dev/sass/partials/globals/_typography.scss */
+small,
+.tiny {
+  font-size: 14px;
+  font-size: 0.875em;
+  line-height: 21px;
+}
+
+/* line 78, ../../dev/sass/partials/globals/_typography.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 84, ../../dev/sass/partials/globals/_typography.scss */
+em {
+  font-style: italic;
+}
+
 /* line 15, ../../dev/sass/partials/globals/_core.scss */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -87,8 +171,8 @@ body {
 /* line 39, ../../dev/sass/partials/globals/_core.scss */
 .wrapper {
   width: 100%;
-  max-width: 1400px;
-  padding: 0;
+  max-width: 1200px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -184,8 +268,12 @@ input[type="submit"] {
   background: #2b78c4;
   color: white;
   display: inline-block;
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 24px;
+  font-family: arial, sans-serif;
 }
-/* line 85, ../../dev/sass/partials/globals/_forms.scss */
+/* line 87, ../../dev/sass/partials/globals/_forms.scss */
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
@@ -193,21 +281,21 @@ input[type="submit"]:hover {
   background: #d13e36;
   text-decoration: none;
 }
-/* line 93, ../../dev/sass/partials/globals/_forms.scss */
+/* line 95, ../../dev/sass/partials/globals/_forms.scss */
 .btn.secondary,
 button.secondary,
 input[type="submit"].secondary {
   background: #2b78c4;
   color: white;
 }
-/* line 98, ../../dev/sass/partials/globals/_forms.scss */
+/* line 100, ../../dev/sass/partials/globals/_forms.scss */
 .btn.secondary:hover,
 button.secondary:hover,
 input[type="submit"].secondary:hover {
   color: white;
   background: #c4c416;
 }
-/* line 107, ../../dev/sass/partials/globals/_forms.scss */
+/* line 109, ../../dev/sass/partials/globals/_forms.scss */
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
@@ -275,93 +363,26 @@ table th, table td {
   width: 25%;
 }
 
-/* line 9, ../../dev/sass/partials/globals/_typography.scss */
-html {
-  font-size: 100%;
-}
-
-/* line 15, ../../dev/sass/partials/globals/_typography.scss */
-body, input, textarea, select, button, p, a {
-  font-size: 16px;
-  font-size: 1em;
-  line-height: 24px;
-  color: #212328;
-  font-family: arial, sans-serif;
-}
-
-/* line 23, ../../dev/sass/partials/globals/_typography.scss */
-h1, h3, h4, h5, h6, p {
-  margin-bottom: 13.33333px;
-  font-family: "Raleway", arial, sans-serif;
-  font-weight: 600;
-}
-
-/* line 31, ../../dev/sass/partials/globals/_typography.scss */
-h1, .h1, .alpha {
-  text-align: center;
-  font-size: 48px;
-  font-size: 3em;
-  line-height: 72px;
-}
-
-/* line 38, ../../dev/sass/partials/globals/_typography.scss */
-h2, .h2, .beta {
-  font-size: 32px;
-  font-size: 2em;
-  line-height: 48px;
-  color: #212328;
-}
-
-/* line 45, ../../dev/sass/partials/globals/_typography.scss */
-h3, .h3, .gamma {
-  font-size: 20px;
-  font-size: 1.25em;
-  line-height: 30px;
-}
-
-/* line 51, ../../dev/sass/partials/globals/_typography.scss */
-h4, .h4, .delta {
-  font-size: 18px;
-  font-size: 1.125em;
-  line-height: 27px;
-}
-
-/* line 58, ../../dev/sass/partials/globals/_typography.scss */
-h5, .h5, .epsilon,
-h6, .h6, .zeta {
-  font-size: 17px;
-  font-size: 1.0625em;
-  line-height: 25.5px;
-}
-
-/* line 64, ../../dev/sass/partials/globals/_typography.scss */
-.mega {
-  font-size: 72px;
-  font-size: 4.5em;
-  line-height: 108px;
-}
-
-/* line 72, ../../dev/sass/partials/globals/_typography.scss */
-small,
-.tiny {
-  font-size: 14px;
-  font-size: 0.875em;
-  line-height: 21px;
-}
-
-/* line 78, ../../dev/sass/partials/globals/_typography.scss */
-strong {
-  font-weight: bold;
-}
-
-/* line 84, ../../dev/sass/partials/globals/_typography.scss */
-em {
-  font-style: italic;
-}
-
 /* line 5, ../../dev/sass/partials/modules/_app-layout.scss */
 .app-header {
   padding: 80px 0;
+}
+
+/* line 4, ../../dev/views/song/partials/metronome.scss */
+.metronome .pulser {
+  opacity: 0;
+  background: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+/* line 12, ../../dev/views/song/partials/metronome.scss */
+.metronome .pulser.active {
+  opacity: 1;
+}
+/* line 20, ../../dev/views/song/partials/metronome.scss */
+.metronome .metronome-start.active {
+  background: green;
 }
 
 /* line 6, ../../dev/sass/misc/_helpers.scss */

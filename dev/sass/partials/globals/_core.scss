@@ -4,8 +4,8 @@
 // ============================================================
 
 $backgroundColor: $col-lightgrey;
-$containerWidth: 1400px;
-$containerPadding: 0;
+$containerWidth: 1200px;
+$containerPadding: 0 $baseline;
 $containerCentering: true;
 $includeBorderBox: true;
 

@@ -12,7 +12,7 @@ html {
 
 }
 
-body, input, textarea, select, button, p, a {
+body, input, textarea, select, p, a {
 
     @include font(16); 
     color: $col-black;
