@@ -22,4 +22,42 @@
 			background: green;
 		}
 	}
+
+	.timeline {
+
+		width: 100%;
+		@include cf;
+
+		li {
+
+			width: 25%;
+			background: $col-darkgrey;
+			height: 3px;
+			float: left;
+			position: relative;
+
+			&:before {
+
+				content: '';
+				background: $col-red;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				height: 3px;
+			}
+
+			&:after {
+
+				content: '';
+				background: $col-darkgrey;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				position: absolute;
+				bottom: -10px;
+				right: 0;
+			}
+		}
+	}
 }

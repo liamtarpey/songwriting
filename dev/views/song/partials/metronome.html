@@ -1,5 +1,34 @@
 
 
-<p>test</p>
 
-<h2>another test</h2>
+<div ng-class="{active:pulsing}" class="pulser"></div>
+
+<ul class="timeline">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<form action="">
+	<label for="tempo">Bpm:</label>
+	<input type="number" min-length="2" max-length="3" ng-model="bpm" name="tempo" id="tempo">
+	<label for="time-signature">Time signature:</label>
+	<select name="time-signature"  id="time-signature">
+		<option value="" 
+				ng-repeat="timeSig in timeSignatures" 
+				beats="{{timeSig.beats}}"
+				bars="{{timeSig.bars}}">
+				{{timeSig.time}}
+		</option>
+	</select>
+	<button ng-click="click()" ng-if="bpm" ng-class="{active:running}" class="metronome-start">Start</button>
+</form>
+
+{{run}}
+{{bpm}}
+{{pulsing}}
+{{timeSignature}}
+{{timeSignatures}}
+{{beats}}
+{{bars}}

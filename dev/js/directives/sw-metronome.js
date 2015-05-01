@@ -8,12 +8,15 @@
 
     	restrict: 'A',
     	templateUrl: 'ng-views/metronome.html',
-
         link : function(scope, element, attrs) {       
 
 			// Scope variables
-			scope.run     = false;
-			scope.pulsing = false;
+			scope.run            = false;
+			scope.pulsing        = false;
+			scope.timeSignatures = [
+				{time: "4/4", beats: "4", bars: "4" },
+				{time: "12/8", beats: "12", bars: "8" }
+			];
 
 			// Run metronome
 			scope.click = function() {

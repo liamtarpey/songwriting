@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,46 +20,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -114,7 +114,7 @@ h4, .h4, .delta {
   line-height: 27px;
 }
 
-/* line 58, ../../dev/sass/partials/globals/_typography.scss */
+/* line 57, ../../dev/sass/partials/globals/_typography.scss */
 h5, .h5, .epsilon,
 h6, .h6, .zeta {
   font-size: 17px;
@@ -129,7 +129,7 @@ h6, .h6, .zeta {
   line-height: 108px;
 }
 
-/* line 72, ../../dev/sass/partials/globals/_typography.scss */
+/* line 71, ../../dev/sass/partials/globals/_typography.scss */
 small,
 .tiny {
   font-size: 14px;
@@ -149,8 +149,8 @@ em {
 
 /* line 15, ../../dev/sass/partials/globals/_core.scss */
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -189,7 +189,7 @@ blockquote {
     max-width: 60%;
   }
 }
-/* line 27, ../../dev/sass/partials/globals/_blockquotes.scss */
+/* line 26, ../../dev/sass/partials/globals/_blockquotes.scss */
 blockquote:before, blockquote:after {
   font-size: 26px;
   font-size: 1.625em;
@@ -209,17 +209,15 @@ blockquote:after {
   content: close-quote;
 }
 
-/* line 27, ../../dev/sass/partials/globals/_forms.scss */
+/* line 23, ../../dev/sass/partials/globals/_forms.scss */
 .btn,
 input,
 button,
 select,
 textarea {
   margin-bottom: 10px;
-  -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
+  -webkit-border-radius: 0;
   border-radius: 0;
   border: 1px solid #80807e;
 }
@@ -232,12 +230,10 @@ textarea:focus {
   outline: none;
 }
 
-/* line 50, ../../dev/sass/partials/globals/_forms.scss */
-input[type="text"], select,
-textarea,
+/* line 45, ../../dev/sass/partials/globals/_forms.scss */
+input[type="text"], textarea,
 input[type="date"],
 input[type="email"],
-input[type="number"],
 input[type="search"],
 input[type="password"] {
   display: block;
@@ -246,19 +242,32 @@ input[type="password"] {
   padding: 10px;
 }
 
-/* line 60, ../../dev/sass/partials/globals/_forms.scss */
-select,
+/* line 58, ../../dev/sass/partials/globals/_forms.scss */
+input[type="number"] {
+  max-width: 120px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+/* line 66, ../../dev/sass/partials/globals/_forms.scss */
+select {
+  display: block;
+  padding: 10px;
+}
+
+/* line 72, ../../dev/sass/partials/globals/_forms.scss */
 textarea {
   display: block;
 }
 
-/* line 67, ../../dev/sass/partials/globals/_forms.scss */
+/* line 79, ../../dev/sass/partials/globals/_forms.scss */
 textarea {
   resize: vertical;
   min-height: 260px;
 }
 
-/* line 76, ../../dev/sass/partials/globals/_forms.scss */
+/* line 86, ../../dev/sass/partials/globals/_forms.scss */
 .btn,
 button,
 input[type="submit"] {
@@ -273,7 +282,7 @@ input[type="submit"] {
   line-height: 24px;
   font-family: arial, sans-serif;
 }
-/* line 87, ../../dev/sass/partials/globals/_forms.scss */
+/* line 99, ../../dev/sass/partials/globals/_forms.scss */
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
@@ -281,21 +290,21 @@ input[type="submit"]:hover {
   background: #d13e36;
   text-decoration: none;
 }
-/* line 95, ../../dev/sass/partials/globals/_forms.scss */
+/* line 107, ../../dev/sass/partials/globals/_forms.scss */
 .btn.secondary,
 button.secondary,
 input[type="submit"].secondary {
   background: #2b78c4;
   color: white;
 }
-/* line 100, ../../dev/sass/partials/globals/_forms.scss */
+/* line 112, ../../dev/sass/partials/globals/_forms.scss */
 .btn.secondary:hover,
 button.secondary:hover,
 input[type="submit"].secondary:hover {
   color: white;
   background: #c4c416;
 }
-/* line 109, ../../dev/sass/partials/globals/_forms.scss */
+/* line 121, ../../dev/sass/partials/globals/_forms.scss */
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
@@ -384,6 +393,46 @@ table th, table td {
 .metronome .metronome-start.active {
   background: green;
 }
+/* line 26, ../../dev/views/song/partials/metronome.scss */
+.metronome .timeline {
+  width: 100%;
+  *zoom: 1;
+}
+/* line 38, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+.metronome .timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 31, ../../dev/views/song/partials/metronome.scss */
+.metronome .timeline li {
+  width: 25%;
+  background: #b8b8b8;
+  height: 3px;
+  float: left;
+  position: relative;
+}
+/* line 39, ../../dev/views/song/partials/metronome.scss */
+.metronome .timeline li:before {
+  content: '';
+  background: #d13e36;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+}
+/* line 50, ../../dev/views/song/partials/metronome.scss */
+.metronome .timeline li:after {
+  content: '';
+  background: #b8b8b8;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+}
 
 /* line 6, ../../dev/sass/misc/_helpers.scss */
 .block {
@@ -458,7 +507,7 @@ table th, table td {
 }
 
 @media print {
-  /* line 13, ../../dev/sass/misc/_print.scss */
+  /* line 11, ../../dev/sass/misc/_print.scss */
   *,
   *:before,
   *:after {
