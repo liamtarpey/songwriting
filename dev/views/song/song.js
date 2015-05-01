@@ -1,6 +1,6 @@
 
-.controller('song',['$scope', function ($scope){
+app.controller('song',['$scope', function ($scope){
 	
 
 
-}])
+}]);

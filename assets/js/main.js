@@ -24785,12 +24785,12 @@ var app = angular.module('songwriting', [
 	'ngRoute', 
 	'ngSanitize',
 	'ngAnimate'
-])
+]);
 
 
 
 
-	.config(function($routeProvider, $locationProvider) {
+	app.config(function($routeProvider, $locationProvider) {
 
         var path = 'ng-views/';
 
@@ -24807,7 +24807,7 @@ var app = angular.module('songwriting', [
 
         $locationProvider.html5Mode(true);
 
-	})
+	});
 	
 	// .factory('api', ['$http', '$q', function($http, $q) {
 
@@ -24846,7 +24846,7 @@ var app = angular.module('songwriting', [
 	    
 	// }])
 
-.directive('swMetronome', [
+app.directive('swMetronome', [
 		   '$interval', 
 		   '$timeout', 
 	       function ($interval, $timeout) {
@@ -24855,23 +24855,36 @@ var app = angular.module('songwriting', [
 
     	restrict: 'A',
     	templateUrl: 'ng-views/metronome.html',
-        link : function(scope, element, attrs) {       
+        link : function(scope, element, attrs) {      
 
-			// Scope variables
-			scope.run            = false;
-			scope.pulsing        = false;
-			scope.timeSignatures = [
-				{time: "4/4", beats: "4", bars: "4" },
-				{time: "12/8", beats: "12", bars: "8" }
+        	// Defaults
+        	scope.selectedTimeSignature = "4/4"; 
+        	scope.beats                 = 4;
+			scope.bars                  = 4;
+
+			// Scope vars
+			scope.run                   = false;
+			scope.pulsing               = false;
+			scope.timeSignatures        = [
+				{ time: "4/4", beats: "4", bars: "4" },
+				{ time: "12/8", beats: "12", bars: "8" }
 			];
+
+			// Get time signature and define new scope vars
+			scope.getTimeSignature = function() {
+
+				// ERRORS OUT BELOW - to fix
+				scope.beats = scope.selectedTimeSignature.beats;
+				scope.bars  = selectedTimeSignature.bars;
+				console.log(scope.selectedTimeSignature);
+				// console.log(scope.beats);
+				// console.log(scope.bars);
+			};
 
 			// Run metronome
 			scope.click = function() {
 
-				// Global variables
 				var firstMesure = 1;
-
-				// Scope variables
 				scope.interval = 1000 / (scope.bpm / 60);
 				scope.run      = !scope.run;
 
@@ -24903,13 +24916,13 @@ var app = angular.module('songwriting', [
 			}
         }
     }
-}])
+}]);
 
 
 
 
-.controller('song',['$scope', function ($scope){
+app.controller('song',['$scope', function ($scope){
 	
 
 
-}])
+}]);

@@ -3,7 +3,7 @@
 
 <div ng-class="{active:pulsing}" class="pulser"></div>
 
-<ul class="timeline">
+<ul class="timeline" ng-class="{active:pulsing}">
 	<li></li>
 	<li></li>
 	<li></li>
@@ -14,13 +14,17 @@
 	<label for="tempo">Bpm:</label>
 	<input type="number" min-length="2" max-length="3" ng-model="bpm" name="tempo" id="tempo">
 	<label for="time-signature">Time signature:</label>
-	<select name="time-signature"  id="time-signature">
-		<option value="" 
-				ng-repeat="timeSig in timeSignatures" 
+	<!-- <select name="time-signature"  id="time-signature" ng-change="getTimeSignature()" ng-model="selectedTimeSignature">
+		<option ng-repeat="timeSig in timeSignatures" 
+				value="{{timeSig.time}}" 
 				beats="{{timeSig.beats}}"
 				bars="{{timeSig.bars}}">
 				{{timeSig.time}}
 		</option>
+	</select> -->
+	<select ng-model="selectedTimeSignature" 
+			ng-options="t.time for t in timeSignatures" 
+			ng-change="getTimeSignature()">
 	</select>
 	<button ng-click="click()" ng-if="bpm" ng-class="{active:running}" class="metronome-start">Start</button>
 </form>
@@ -28,7 +32,5 @@
 {{run}}
 {{bpm}}
 {{pulsing}}
-{{timeSignature}}
-{{timeSignatures}}
-{{beats}}
-{{bars}}
+{{selectedTimeSignature.beats}}
+{{selectedTimeSignature.bars}}

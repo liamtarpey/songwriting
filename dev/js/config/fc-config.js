@@ -1,6 +1,6 @@
 
 
-	.config(function($routeProvider, $locationProvider) {
+	app.config(function($routeProvider, $locationProvider) {
 
         var path = 'ng-views/';
 
@@ -17,4 +17,4 @@
 
         $locationProvider.html5Mode(true);
 
-	})
+	});
