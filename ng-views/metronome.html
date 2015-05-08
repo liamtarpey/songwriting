@@ -11,22 +11,31 @@
 </ul>
 
 <form action="">
+
 	<label for="tempo">Bpm:</label>
-	<input type="number" min-length="2" max-length="3" ng-model="bpm" name="tempo" id="tempo">
+	<input type="number" 
+		   min-length="2" 
+		   max-length="3" 
+		   ng-model="bpm" 
+		   name="tempo" 
+		   id="tempo">
+
 	<label for="time-signature">Time signature:</label>
-	<!-- <select name="time-signature"  id="time-signature" ng-change="getTimeSignature()" ng-model="selectedTimeSignature">
-		<option ng-repeat="timeSig in timeSignatures" 
-				value="{{timeSig.time}}" 
-				beats="{{timeSig.beats}}"
-				bars="{{timeSig.bars}}">
-				{{timeSig.time}}
-		</option>
-	</select> -->
-	<select ng-model="selectedTimeSignature" 
-			ng-options="t.time for t in timeSignatures" 
-			ng-change="getTimeSignature()">
-	</select>
+	<div class="time-signatures">
+		<a href="javascript:;" ng-click="showTimeSignatures = !showTimeSignatures" class="dropdown-select block">
+			Select
+		</a>
+		<div class="dropdown" ng-if="showTimeSignatures">
+			<a href="javascript:;" 
+			   ng-repeat="timeSig in timeSignatures"
+			   ng-click="getTimeSignature(timeSig.beats, timeSig.bars)" 
+			   ng-bind-html="timeSig.time">
+			</a>
+		</div>
+	</div>
+
 	<button ng-click="click()" ng-if="bpm" ng-class="{active:running}" class="metronome-start">Start</button>
+
 </form>
 
 {{run}}
@@ -34,3 +43,5 @@
 {{pulsing}}
 {{selectedTimeSignature.beats}}
 {{selectedTimeSignature.bars}}
+
+<p>Show dropdown? {{showTimeSignatures}}</p>

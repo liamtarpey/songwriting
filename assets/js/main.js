@@ -24847,9 +24847,9 @@ var app = angular.module('songwriting', [
 	// }])
 
 app.directive('swMetronome', [
-		   '$interval', 
-		   '$timeout', 
-	       function ($interval, $timeout) {
+		      '$interval', 
+		      '$timeout', 
+	           function ($interval, $timeout) {
 
     return {
 
@@ -24865,20 +24865,21 @@ app.directive('swMetronome', [
 			// Scope vars
 			scope.run                   = false;
 			scope.pulsing               = false;
+			scope.showTimeSignatures    = false;
 			scope.timeSignatures        = [
 				{ time: "4/4", beats: "4", bars: "4" },
 				{ time: "12/8", beats: "12", bars: "8" }
 			];
 
 			// Get time signature and define new scope vars
-			scope.getTimeSignature = function() {
+			scope.getTimeSignature = function(beats, bars) {
 
-				// ERRORS OUT BELOW - to fix
-				scope.beats = scope.selectedTimeSignature.beats;
-				scope.bars  = selectedTimeSignature.bars;
-				console.log(scope.selectedTimeSignature);
-				// console.log(scope.beats);
-				// console.log(scope.bars);
+				scope.showTimeSignatures = false;
+				scope.beats              = beats;
+				scope.bars               = bars;
+				
+				console.log(scope.beats);
+				console.log(scope.bars);
 			};
 
 			// Run metronome
@@ -24913,7 +24914,7 @@ app.directive('swMetronome', [
 					firstMesure = 1;
 					$interval.cancel(scope.runner);
 				}
-			}
+			};
         }
     }
 }]);

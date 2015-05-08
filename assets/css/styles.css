@@ -433,6 +433,29 @@ table th, table td {
   bottom: -10px;
   right: 0;
 }
+/* line 64, ../../dev/views/song/partials/metronome.scss */
+.metronome .time-signatures {
+  border: 1px solid #212328;
+  padding: 10px 20px;
+  width: 200px;
+  position: relative;
+}
+/* line 71, ../../dev/views/song/partials/metronome.scss */
+.metronome .time-signatures .dropdown {
+  position: absolute;
+  top: 45px;
+  left: -1px;
+  right: -1px;
+  background: white;
+  border-left: 1px solid #212328;
+  border-right: 1px solid #212328;
+  border-bottom: 1px solid #212328;
+}
+/* line 82, ../../dev/views/song/partials/metronome.scss */
+.metronome .time-signatures .dropdown a {
+  display: block;
+  padding: 10px 5px;
+}
 
 /* line 6, ../../dev/sass/misc/_helpers.scss */
 .block {
