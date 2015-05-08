@@ -24866,18 +24866,20 @@ app.directive('swMetronome', [
 			scope.run                   = false;
 			scope.pulsing               = false;
 			scope.showTimeSignatures    = false;
+			scope.timeSignatureText     = "Select";
 			scope.timeSignatures        = [
 				{ time: "4/4", beats: "4", bars: "4" },
 				{ time: "12/8", beats: "12", bars: "8" }
 			];
 
 			// Get time signature and define new scope vars
-			scope.getTimeSignature = function(beats, bars) {
+			scope.getTimeSignature = function(beats, bars, time) {
 
 				scope.showTimeSignatures = false;
+				scope.timeSignatureText  = time;
 				scope.beats              = beats;
 				scope.bars               = bars;
-				
+
 				console.log(scope.beats);
 				console.log(scope.bars);
 			};

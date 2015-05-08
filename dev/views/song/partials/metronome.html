@@ -22,15 +22,16 @@
 
 	<label for="time-signature">Time signature:</label>
 	<div class="time-signatures">
-		<a href="javascript:;" ng-click="showTimeSignatures = !showTimeSignatures" class="dropdown-select block">
-			Select
-		</a>
+		<a href="javascript:;" 
+		   ng-click="showTimeSignatures = !showTimeSignatures" 
+		   ng-bind-html="timeSignatureText"
+		   class="dropdown-select block"></a>
+
 		<div class="dropdown" ng-if="showTimeSignatures">
 			<a href="javascript:;" 
 			   ng-repeat="timeSig in timeSignatures"
-			   ng-click="getTimeSignature(timeSig.beats, timeSig.bars)" 
-			   ng-bind-html="timeSig.time">
-			</a>
+			   ng-click="getTimeSignature(timeSig.beats, timeSig.bars, timeSig.time)" 
+			   ng-bind-html="timeSig.time"></a>
 		</div>
 	</div>
 
