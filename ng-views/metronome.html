@@ -1,19 +1,18 @@
 
-
-
-<div ng-class="{active:pulsing}" class="pulser"></div>
-
 <ul class="timeline" ng-class="{active:pulsing}">
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
+	<li ng-repeat="i in getBeats(beats) track by $index">
+		<span class="percentage" 
+		      ng-show="firstMeasure == $index && run" 
+		      ng-attr-style="animation-duration:{{interval}}ms; 
+		                     -webkit-animation-duration:{{interval}}ms;
+		                     -moz-animation-duration:{{interval}}ms;"></span>
+		<span class="dot" ng-class="{active: firstMeasure == $index && run}"></span>
+	</li>
 </ul>
 
 <form action="">
-
 	<label for="tempo">Bpm:</label>
-	<input type="number" 
+	<input type="text" 
 		   min-length="2" 
 		   max-length="3" 
 		   ng-model="bpm" 
@@ -36,13 +35,9 @@
 	</div>
 
 	<button ng-click="click()" ng-if="bpm" ng-class="{active:running}" class="metronome-start">Start</button>
-
 </form>
 
-{{run}}
-{{bpm}}
-{{pulsing}}
-{{selectedTimeSignature.beats}}
-{{selectedTimeSignature.bars}}
+<!-- {{bpm}} 
+{{firstMeasure}}
+{{interval}} -->
 
-<p>Show dropdown? {{showTimeSignatures}}</p>
