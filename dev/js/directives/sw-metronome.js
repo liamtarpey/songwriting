@@ -17,6 +17,7 @@ app.directive('swMetronome', [
         	scope.selectedTimeSignature = "4/4"; 
         	scope.beats                 = 4;
 			scope.bars                  = 4;
+			scope.metronomeBtnText      = "Start";
 
 
 			//===========
@@ -64,7 +65,6 @@ app.directive('swMetronome', [
 			//========================
 			scope.click = function() {
 
-
 				scope.firstMeasure = 0;
 				scope.barsInt      = Number(scope.bars);
 				scope.bpmInt       = Number(scope.bpm);
@@ -72,6 +72,8 @@ app.directive('swMetronome', [
 				scope.run          = !scope.run;
 
 				if (scope.run == true) {
+
+					scope.metronomeBtnText = "Stop";
 
 					scope.runner = $interval(function() {
 
@@ -85,7 +87,8 @@ app.directive('swMetronome', [
 
 				} else {
 
-					scope.firstMeasure   = 1;
+					scope.metronomeBtnText = "Start";
+					scope.firstMeasure     = 1;
 					$interval.cancel(scope.runner);
 				}
 			};

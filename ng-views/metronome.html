@@ -1,5 +1,5 @@
 
-<ul class="timeline" ng-class="{active:pulsing}">
+<ul class="timeline">
 	<li ng-repeat="i in getBeats(beats) track by $index">
 		<span class="percentage" 
 		      ng-show="firstMeasure == $index && run" 
@@ -34,7 +34,7 @@
 		</div>
 	</div>
 
-	<button ng-click="click()" ng-if="bpm" ng-class="{active:running}" class="metronome-start">Start</button>
+	<button ng-click="click()" ng-if="bpm" ng-class="{active:run}" class="metronome-btn">{{metronomeBtnText}}</button>
 </form>
 
 <!-- {{bpm}} 

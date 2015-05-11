@@ -378,7 +378,7 @@ table th, table td {
 }
 
 /* line 6, ../../dev/views/song/partials/metronome.scss */
-.metronome .metronome-start.active {
+.metronome .metronome-btn.active {
   background: green;
 }
 /* line 12, ../../dev/views/song/partials/metronome.scss */

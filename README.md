@@ -6,9 +6,10 @@
 ## Partially Completed ##
 
 * Metronome directive 
-	* Allow users to change bpm on the fly
+	* Allow bpm change on the fly
+	* Allow time signature change on the fly
 	* Play clicking sound
-	* Angular messages (max-length of 3 and min-length of 2 in input field)
+	* Create slider for bpm 
 
 ## To do ##
 * Recording 
