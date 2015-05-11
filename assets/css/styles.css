@@ -425,17 +425,35 @@ table th, table td {
 .metronome .timeline li .dot.active {
   background: #d13e36;
 }
-/* line 54, ../../dev/views/song/partials/metronome/metronome.scss */
+/* line 56, ../../dev/views/song/partials/metronome/metronome.scss */
+.metronome .slider .slider-line {
+  background: white;
+  height: 10px;
+  border-radius: 6px;
+  width: 500px;
+  position: relative;
+  margin: 40px 0;
+}
+/* line 66, ../../dev/views/song/partials/metronome/metronome.scss */
+.metronome .slider .slider-knob {
+  position: absolute;
+  bottom: -5px;
+  width: 20px;
+  height: 20px;
+  background: #d13e36;
+  border-radius: 50%;
+}
+/* line 77, ../../dev/views/song/partials/metronome/metronome.scss */
 .metronome .time-signatures {
   border: 1px solid #212328;
   width: 200px;
   position: relative;
 }
-/* line 60, ../../dev/views/song/partials/metronome/metronome.scss */
+/* line 83, ../../dev/views/song/partials/metronome/metronome.scss */
 .metronome .time-signatures .dropdown-select {
   padding: 10px 20px;
 }
-/* line 65, ../../dev/views/song/partials/metronome/metronome.scss */
+/* line 88, ../../dev/views/song/partials/metronome/metronome.scss */
 .metronome .time-signatures .dropdown {
   position: absolute;
   top: 45px;
@@ -446,41 +464,41 @@ table th, table td {
   border-right: 1px solid #212328;
   border-bottom: 1px solid #212328;
 }
-/* line 76, ../../dev/views/song/partials/metronome/metronome.scss */
+/* line 99, ../../dev/views/song/partials/metronome/metronome.scss */
 .metronome .time-signatures .dropdown a {
   display: block;
   padding: 10px 5px;
 }
 
 @-webkit-keyframes percentage {
-  /* line 88, ../../dev/views/song/partials/metronome/metronome.scss */
+  /* line 111, ../../dev/views/song/partials/metronome/metronome.scss */
   0% {
     width: 0%;
   }
 
-  /* line 89, ../../dev/views/song/partials/metronome/metronome.scss */
+  /* line 112, ../../dev/views/song/partials/metronome/metronome.scss */
   100% {
     width: 100%;
   }
 }
 @-moz-keyframes percentage {
-  /* line 93, ../../dev/views/song/partials/metronome/metronome.scss */
+  /* line 116, ../../dev/views/song/partials/metronome/metronome.scss */
   0% {
     width: 0%;
   }
 
-  /* line 94, ../../dev/views/song/partials/metronome/metronome.scss */
+  /* line 117, ../../dev/views/song/partials/metronome/metronome.scss */
   100% {
     width: 100%;
   }
 }
 @keyframes percentage {
-  /* line 98, ../../dev/views/song/partials/metronome/metronome.scss */
+  /* line 121, ../../dev/views/song/partials/metronome/metronome.scss */
   0% {
     width: 0%;
   }
 
-  /* line 99, ../../dev/views/song/partials/metronome/metronome.scss */
+  /* line 122, ../../dev/views/song/partials/metronome/metronome.scss */
   100% {
     width: 100%;
   }
