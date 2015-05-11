@@ -35,7 +35,9 @@ module.exports = function(grunt) {
                     'dev/js/*.js',
                     'dev/js/**/*.js',
                     'dev/js/**/**/*.js',
-                    'dev/views/**/*.js'
+                    'dev/views/**/*.js',
+                    'dev/views/**/**/*.js',
+                    'dev/views/**/**/**/*.js'
                 ],
                 tasks: ['concat', 'uglify'],
                 options: {
@@ -47,7 +49,9 @@ module.exports = function(grunt) {
                     'dev/sass/*.scss', 
                     'dev/sass/**/*.scss', 
                     'dev/sass/**/**/*.scss',
-                    'dev/views/**/*.scss'
+                    'dev/views/**/*.scss',
+                    'dev/views/**/**/*.scss',
+                    'dev/views/**/**/**/*.scss'
                 ],
                 tasks: ['compass'],
                 options: {
@@ -57,7 +61,8 @@ module.exports = function(grunt) {
             html: {
                 files: [
                     'dev/views/**/*.html',
-                    'dev/views/**/**/*.html'
+                    'dev/views/**/**/*.html',
+                    'dev/views/**/**/**/*.html'
                 ],
                 tasks: ['copy']
             }

@@ -1,5 +1,5 @@
 
-app.directive('swMetronome', [
+app.directive('metronome', [
 		      '$interval', 
 		      '$timeout', 
 	           function ($interval, $timeout) {
@@ -11,21 +11,21 @@ app.directive('swMetronome', [
         link : function(scope, element, attrs) {      
 
 
-        	//=========
+        	//==========
         	// Defaults
-        	//=========
-        	scope.selectedTimeSignature = "4/4"; 
+        	//==========
+        	scope.bars                  = 4;
         	scope.beats                 = 4;
-			scope.bars                  = 4;
-			scope.metronomeBtnText      = "Start";
+        	scope.metronomeBtnText      = "Start";
+        	scope.selectedTimeSignature = "4/4"; 			
+			
 
-
-			//===========
+			//============
 			// Scope vars
-			//===========
+			//============
 			scope.run                   = false;
-			scope.showTimeSignatures    = false;
 			scope.timeSignatureText     = "4/4";
+			scope.showTimeSignatures    = false;
 			scope.timeSignatures        = [
 
 				{ time: "4/4",  beats: "4",  bars: "4" },
@@ -37,21 +37,21 @@ app.directive('swMetronome', [
 			];
 
 
-			//=============================================
+			//==============================================
 			// Get time signature and define new scope vars
-			//=============================================
+			//==============================================
 			scope.getTimeSignature = function(beats, bars, time) {
 
-				scope.showTimeSignatures = false;
-				scope.timeSignatureText  = time;
-				scope.beats              = beats;
 				scope.bars               = bars;
+				scope.beats              = beats;
+				scope.timeSignatureText  = time;
+				scope.showTimeSignatures = false;
 			};
 
 
-			//============================================
+			//=============================================
 			// Get number of beats to inject into template
-			//============================================
+			//=============================================
 			scope.getBeats = function(num) {
 
 				var value = Number(num);
@@ -60,16 +60,16 @@ app.directive('swMetronome', [
 			scope.getBeats(scope.beats);
 
 
-			//========================
+			//=========================
 			// Run metronome & animate 
-			//========================
+			//=========================
 			scope.click = function() {
 
-				scope.firstMeasure = 0;
-				scope.barsInt      = Number(scope.bars);
-				scope.bpmInt       = Number(scope.bpm);
-				scope.interval     = ((60/scope.bpmInt) / (scope.barsInt/4)) * 1000;
 				scope.run          = !scope.run;
+				scope.bpmInt       = Number(scope.bpm);
+				scope.barsInt      = Number(scope.bars);
+				scope.interval     = ((60/scope.bpmInt) / (scope.barsInt/4)) * 1000;
+				scope.firstMeasure = 0;
 
 				if (scope.run == true) {
 
