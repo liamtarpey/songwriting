@@ -24859,6 +24859,7 @@ app.controller('metronome',
 				'$timeout', 
 				 function ($scope, $interval, $timeout){
 	
+	
 	//==========
 	// Defaults
 	//==========
