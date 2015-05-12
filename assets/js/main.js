@@ -24945,10 +24945,18 @@ app.controller('metronome',
 	//=====================================
 	// Increment or Decrement bpm function
 	//=====================================
-	$scope.incDec = function(val, range) {
+	$scope.startIncDec = function(val, range) {
 
-		$scope.bpm = Number($scope.bpm);
-        (range == "inc") ? $scope.bpm+=1 : $scope.bpm-=1;     
+		$scope.incDec = $interval(function() {
+
+			$scope.bpm = Number($scope.bpm);
+        	(range == "inc") ? $scope.bpm+=1 : $scope.bpm-=1;  
+		},60); 
+    }
+
+    $scope.stopIncDec = function() {
+
+		$interval.cancel($scope.incDec);
     }
 
 }]);

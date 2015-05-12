@@ -1,6 +1,6 @@
 <div class="slider">
 	<span ng-model="$parent.bpm" class="block">{{bpm}} bpm</span>
 	<input type="range" min="35" max="350" ng-model="$parent.bpm" />
-	<a href="javascript:;" ng-click="incDec(1,'inc')" class="inc">+</a>
-	<a href="javascript:;" ng-click="incDec(1,'dec')" class="dec">-</a>
+	<a href="javascript:;" ng-mousedown="startIncDec(1,'inc')" ng-mouseup="stopIncDec()" class="inc">+</a>
+	<a href="javascript:;" ng-mousedown="startIncDec(1,'dec')" ng-mouseup="stopIncDec()" class="dec">-</a>
 </div>
