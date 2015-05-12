@@ -2,6 +2,6 @@ app.factory('mainFactory', function() {
 
 	return {
 
-		bpm : 95
+		// bpm : 95
 	}
 });

@@ -24849,16 +24849,15 @@ app.factory('mainFactory', function() {
 
 	return {
 
-		bpm : 95
+		// bpm : 95
 	}
 });
 
 app.controller('metronome', 
 			    ['$scope', 
-				'mainFactory', 
 				'$interval', 
 				'$timeout', 
-				 function ($scope, mainFactory, $interval, $timeout){
+				 function ($scope, $interval, $timeout){
 	
 	//==========
 	// Defaults
@@ -24867,11 +24866,7 @@ app.controller('metronome',
 	$scope.beats                 = 4;
 	$scope.metronomeBtnText      = "Start";
 	$scope.selectedTimeSignature = "4/4"; 
-
-	// $scope.$watch(function() {
-
-		$scope.bpm = mainFactory.bpm;		
-	//});
+	$scope.bpm                   = 120;		
 		
 
 	//============
@@ -24952,6 +24947,7 @@ app.controller('metronome',
 	$scope.incDec = function(val, range) {
 
         (range == "inc") ? $scope.bpm+=1 : $scope.bpm-=1;     
+        console.log($scope.bpm)
     }
 
 }]);
