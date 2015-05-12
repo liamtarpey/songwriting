@@ -53,6 +53,8 @@
 
 	.slider {
 
+		margin: $baseline*2 0;
+
 		.slider-line {
 
 			background: $col-white;
@@ -60,7 +62,8 @@
 			border-radius: 6px;
 			width: 500px;
 			position: relative;
-			margin: $baseline*2 0;
+			display: inline-block;
+			margin-right: $baseline;
 		}
 
 		.slider-knob {
@@ -71,6 +74,18 @@
 			height: 20px;
 			background: $col-red;
 			border-radius: 50%;
+		}
+
+		.inc, .dec {
+
+			display: inline-block;
+			background: $col-red;
+			border-radius: 50%;
+			width: 24px;
+			height: 24px;
+			color: $col-white;
+			text-align: center;
+			margin: 0 3px;
 		}
 	}
 

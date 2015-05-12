@@ -24849,137 +24849,40 @@ app.factory('mainFactory', function() {
 
 	return {
 
-		bpm : 120
+		bpm : 95
 	}
 });
-
-app.directive('metronome', [
-		      '$interval', 
-		      '$timeout', 
-	           function ($interval, $timeout) {
-
-    return {
-
-    	restrict: 'A',
-    	templateUrl: 'ng-views/metronome.html',
-        link : function(scope, element, attrs) {      
-
-
-        	//==========
-        	// Defaults
-        	//==========
-        	scope.bars                  = 4;
-        	scope.beats                 = 4;
-        	scope.metronomeBtnText      = "Start";
-        	scope.selectedTimeSignature = "4/4"; 			
-			
-
-			//============
-			// Scope vars
-			//============
-			scope.run                   = false;
-			scope.timeSignatureText     = "4/4";
-			scope.showTimeSignatures    = false;
-			scope.timeSignatures        = [
-
-				{ time: "4/4",  beats: "4",  bars: "4" },
-				{ time: "2/2",  beats: "2",  bars: "2" },
-				{ time: "3/4",  beats: "3",  bars: "4" },
-				{ time: "2/4",  beats: "2",  bars: "4" },
-				{ time: "6/8",  beats: "6",  bars: "8" },
-				{ time: "12/8", beats: "12", bars: "8" }
-			];
-
-
-			//==============================================
-			// Get time signature and define new scope vars
-			//==============================================
-			scope.getTimeSignature = function(beats, bars, time) {
-
-				scope.bars               = bars;
-				scope.beats              = beats;
-				scope.timeSignatureText  = time;
-				scope.showTimeSignatures = false;
-			};
-
-
-			//=============================================
-			// Get number of beats to inject into template
-			//=============================================
-			scope.getBeats = function(num) {
-
-				var value = Number(num);
-				return new Array(value);
-			};
-			scope.getBeats(scope.beats);
-
-
-			//=========================
-			// Run metronome & animate 
-			//=========================
-			scope.click = function() {
-
-				scope.run          = !scope.run;
-				scope.bpmInt       = Number(scope.bpm);
-				scope.barsInt      = Number(scope.bars);
-				scope.interval     = ((60/scope.bpmInt) / (scope.barsInt/4)) * 1000;
-				scope.firstMeasure = 0;
-
-				if (scope.run == true) {
-
-					scope.metronomeBtnText = "Stop";
-
-					scope.runner = $interval(function() {
-
-				      scope.firstMeasure  += 1;
-
-				      if (scope.firstMeasure > scope.beats-1) {
-
-				        scope.firstMeasure = 0;
-				      }				      
-				    }, scope.interval); 
-
-				} else {
-
-					scope.metronomeBtnText = "Start";
-					scope.firstMeasure     = 1;
-					$interval.cancel(scope.runner);
-				}
-			};
-        }
-    }
-}]);
-
-
-
 
 app.directive('slider', ['mainFactory', function (mainFactory) {
 
     return {
 
     	restrict: 'A',
-    	template: '<div class="slider-line"><div class="slider-knob" style="left:{{leftPos}}%"></div></div>',
+    	templateUrl: 'ng-views/slider.html',
     	scope: {
     		config: "=slider"
     	},
 
-        link : function(scope, element, attrs) {      
-
-        	var floor    = scope.config.floor,
-        		ceiling  = scope.config.ceiling,
-        		bpm      = mainFactory.bpm, 
-        		value    = bpm - floor,
-        		range    = ceiling - floor,
-        		newValue = value/range * 100;
+        link : function(scope, element, attrs) {   
 
             scope.draggable = false;
-            scope.leftPos   = newValue;
+
+        	var floor   = scope.config.floor,
+        		ceiling = scope.config.ceiling,
+                range   = ceiling - floor;
+
+            scope.$watch(function() {
+
+                scope.value    = mainFactory.bpm - floor;
+                scope.leftPos  = scope.value/range * 100;
+            });
+            
 
         	// Only run functions on hover
         	element.on('mousemove', function(e) {
 
         		var pos = e.clientX - e.offsetX;
-                console.log(pos);
+                //console.log(pos);
 
         		if(scope.draggable == true) {
 
@@ -24996,6 +24899,11 @@ app.directive('slider', ['mainFactory', function (mainFactory) {
 
         		scope.draggable = false;
         	});
+
+            scope.incDec = function(val, range) {
+
+                (range == "inc") ? mainFactory.bpm+=1 : mainFactory.bpm-=1;       
+            }
         }
     }
 }]);
@@ -25003,7 +24911,12 @@ app.directive('slider', ['mainFactory', function (mainFactory) {
 
 
 
-app.controller('metronome', ['$scope', '$interval', '$timeout', function ($scope, $interval, $timeout){
+app.controller('metronome', 
+			    ['$scope', 
+				 'mainFactory', 
+				 '$interval', 
+				 '$timeout', 
+				 function ($scope, mainFactory, $interval, $timeout){
 	
 	//==========
 	// Defaults
@@ -25012,8 +24925,12 @@ app.controller('metronome', ['$scope', '$interval', '$timeout', function ($scope
 	$scope.beats                 = 4;
 	$scope.metronomeBtnText      = "Start";
 	$scope.selectedTimeSignature = "4/4"; 
-	$scope.bpm                   = 120;			
-	
+
+	$scope.$watch(function() {
+		
+		$scope.bpm = mainFactory.bpm;		
+	});
+		
 
 	//============
 	// Scope vars
@@ -25061,9 +24978,8 @@ app.controller('metronome', ['$scope', '$interval', '$timeout', function ($scope
 	$scope.click = function() {
 
 		$scope.run          = !$scope.run;
-		$scope.bpmInt       = Number($scope.bpm);
 		$scope.barsInt      = Number($scope.bars);
-		$scope.interval     = ((60/$scope.bpmInt) / ($scope.barsInt/4)) * 1000;
+		$scope.interval     = ((60/$scope.bpm) / ($scope.barsInt/4)) * 1000;
 		$scope.firstMeasure = 0;
 
 		if ($scope.run == true) {

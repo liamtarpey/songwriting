@@ -1,5 +1,10 @@
 
-app.controller('metronome', ['$scope', '$interval', '$timeout', function ($scope, $interval, $timeout){
+app.controller('metronome', 
+			    ['$scope', 
+				 'mainFactory', 
+				 '$interval', 
+				 '$timeout', 
+				 function ($scope, mainFactory, $interval, $timeout){
 	
 	//==========
 	// Defaults
@@ -8,8 +13,12 @@ app.controller('metronome', ['$scope', '$interval', '$timeout', function ($scope
 	$scope.beats                 = 4;
 	$scope.metronomeBtnText      = "Start";
 	$scope.selectedTimeSignature = "4/4"; 
-	$scope.bpm                   = 120;			
-	
+
+	$scope.$watch(function() {
+		
+		$scope.bpm = mainFactory.bpm;		
+	});
+		
 
 	//============
 	// Scope vars
@@ -57,9 +66,8 @@ app.controller('metronome', ['$scope', '$interval', '$timeout', function ($scope
 	$scope.click = function() {
 
 		$scope.run          = !$scope.run;
-		$scope.bpmInt       = Number($scope.bpm);
 		$scope.barsInt      = Number($scope.bars);
-		$scope.interval     = ((60/$scope.bpmInt) / ($scope.barsInt/4)) * 1000;
+		$scope.interval     = ((60/$scope.bpm) / ($scope.barsInt/4)) * 1000;
 		$scope.firstMeasure = 0;
 
 		if ($scope.run == true) {
