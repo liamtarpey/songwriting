@@ -1,9 +1,9 @@
 
 app.controller('metronome', 
 			    ['$scope', 
-				 'mainFactory', 
-				 '$interval', 
-				 '$timeout', 
+				'mainFactory', 
+				'$interval', 
+				'$timeout', 
 				 function ($scope, mainFactory, $interval, $timeout){
 	
 	//==========
@@ -14,10 +14,10 @@ app.controller('metronome',
 	$scope.metronomeBtnText      = "Start";
 	$scope.selectedTimeSignature = "4/4"; 
 
-	$scope.$watch(function() {
-		
+	// $scope.$watch(function() {
+
 		$scope.bpm = mainFactory.bpm;		
-	});
+	//});
 		
 
 	//============
@@ -67,8 +67,8 @@ app.controller('metronome',
 
 		$scope.run          = !$scope.run;
 		$scope.barsInt      = Number($scope.bars);
-		$scope.interval     = ((60/$scope.bpm) / ($scope.barsInt/4)) * 1000;
 		$scope.firstMeasure = 0;
+		$scope.interval     = ((60/$scope.bpm) / ($scope.barsInt/4)) * 1000;
 
 		if ($scope.run == true) {
 
@@ -91,4 +91,13 @@ app.controller('metronome',
 			$interval.cancel($scope.runner);
 		}
 	};
+
+	//=====================================
+	// Increment or Decrement bpm function
+	//=====================================
+	$scope.incDec = function(val, range) {
+
+        (range == "inc") ? $scope.bpm+=1 : $scope.bpm-=1;     
+    }
+
 }]);

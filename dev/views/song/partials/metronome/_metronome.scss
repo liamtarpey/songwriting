@@ -51,44 +51,6 @@
 		}
 	}
 
-	.slider {
-
-		margin: $baseline*2 0;
-
-		.slider-line {
-
-			background: $col-white;
-			height: 10px;
-			border-radius: 6px;
-			width: 500px;
-			position: relative;
-			display: inline-block;
-			margin-right: $baseline;
-		}
-
-		.slider-knob {
-
-			position: absolute;
-			bottom: -5px;
-			width: 20px;
-			height: 20px;
-			background: $col-red;
-			border-radius: 50%;
-		}
-
-		.inc, .dec {
-
-			display: inline-block;
-			background: $col-red;
-			border-radius: 50%;
-			width: 24px;
-			height: 24px;
-			color: $col-white;
-			text-align: center;
-			margin: 0 3px;
-		}
-	}
-
 	.time-signatures {
 
 		border: 1px solid $col-black;

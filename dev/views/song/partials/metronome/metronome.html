@@ -13,15 +13,8 @@
 	</ul>
 
 	<form action="">
-		<label for="tempo">Bpm:</label> <!-- Change all this into a bpm slider -->
-		<input type="text" 
-			   min-length="2" 
-			   max-length="3" 
-			   ng-model="bpm" 
-			   name="tempo" 
-			   id="tempo">
 
-		<div class="slider" slider="{floor:35,ceiling:350}" ng-model="bpm"></div>
+		<div ng-include="'ng-views/slider.html'"></div>
 
 		<label for="time-signature">Time signature:</label> <!-- Should this be a label? -->
 		<div class="time-signatures">
