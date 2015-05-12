@@ -8,14 +8,8 @@ app.directive('slider', ['mainFactory', function (mainFactory) {
     	scope: {
     		config: "=slider"
     	},
+
         link : function(scope, element, attrs) {      
-
-        	// Defaults
-        	scope.leftPos   = 50;
-        	scope.draggable = false;
-
-        	console.log(scope.config.floor);
-        	console.log(scope.config.ceiling);
 
         	var floor    = scope.config.floor,
         		ceiling  = scope.config.ceiling,
@@ -24,12 +18,14 @@ app.directive('slider', ['mainFactory', function (mainFactory) {
         		range    = ceiling - floor,
         		newValue = value/range * 100;
 
-        		console.log(newValue);
+            scope.draggable = false;
+            scope.leftPos   = newValue;
 
         	// Only run functions on hover
         	element.on('mousemove', function(e) {
 
         		var pos = e.clientX - e.offsetX;
+                console.log(pos);
 
         		if(scope.draggable == true) {
 

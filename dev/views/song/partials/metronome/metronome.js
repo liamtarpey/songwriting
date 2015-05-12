@@ -7,7 +7,8 @@ app.controller('metronome', ['$scope', '$interval', '$timeout', function ($scope
 	$scope.bars                  = 4;
 	$scope.beats                 = 4;
 	$scope.metronomeBtnText      = "Start";
-	$scope.selectedTimeSignature = "4/4"; 			
+	$scope.selectedTimeSignature = "4/4"; 
+	$scope.bpm                   = 120;			
 	
 
 	//============
