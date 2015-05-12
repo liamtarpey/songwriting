@@ -24946,8 +24946,8 @@ app.controller('metronome',
 	//=====================================
 	$scope.incDec = function(val, range) {
 
+		$scope.bpm = Number($scope.bpm);
         (range == "inc") ? $scope.bpm+=1 : $scope.bpm-=1;     
-        console.log($scope.bpm)
     }
 
 }]);
