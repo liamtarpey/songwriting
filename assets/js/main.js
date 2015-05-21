@@ -24868,7 +24868,13 @@ app.controller('metronome',
 	$scope.metronomeBtnText      = "Start";
 	$scope.selectedTimeSignature = "4/4"; 
 	$scope.bpm                   = 120;		
-		
+
+	//============
+	// Audio Files
+	//============
+	var highBlip = new Audio('assets/sounds/high_blip.mp3'),
+		lowBlip  = new Audio('assets/sounds/low_blip.mp3');
+
 
 	//============
 	// Scope vars
@@ -24926,12 +24932,16 @@ app.controller('metronome',
 
 			$scope.runner = $interval(function() {
 
-		      $scope.firstMeasure  += 1;
+		    	$scope.firstMeasure  += 1;
+				
+		    	if ($scope.firstMeasure > $scope.beats-1) {
 
-		      if ($scope.firstMeasure > $scope.beats-1) {
+		    		$scope.firstMeasure = 0;
+		    		//lowBlip.play();
+		    	} else {
 
-		        $scope.firstMeasure = 0;
-		      }				      
+		    		//highBlip.play();
+		    	}		      
 		    }, $scope.interval); 
 
 		} else {
