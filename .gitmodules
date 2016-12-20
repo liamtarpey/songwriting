@@ -1,0 +1,3 @@
+[submodule "shinra-core"]
+	path = shinra-core
+	url = https://github.com/liamtarpey/shinra-core
