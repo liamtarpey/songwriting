@@ -17,7 +17,7 @@
 		li {
 
 			width: 100%;
-			background: $col-darkgrey;
+			//background: $col-darkgrey;
 			height: 3px;
 			position: relative;
 
@@ -29,13 +29,13 @@
 				left: 0;
 				bottom: 0;
 				height: 3px;
-				background: $col-red;
-				@include animation(percentage, linear);
+				//background: $col-red;
+				//@include animation(percentage, linear);
 			}
 
 			.dot {
 
-				background: $col-darkgrey;
+				//background: $col-darkgrey;
 				width: 16px;
 				height: 16px;
 				border-radius: 50%;
@@ -45,7 +45,7 @@
 
 				&.active {
 
-					background: $col-red;
+					//background: $col-red;
 				}
 			}
 		}
@@ -53,13 +53,13 @@
 
 	.time-signatures {
 
-		border: 1px solid $col-black;
+		//border: 1px solid $col-black;
 		width: 200px;
 		position: relative;
 
 		.dropdown-select {
 
-			padding: $baseline/2 $baseline;
+			//padding: $baseline/2 $baseline;
 		}
 
 		.dropdown {
@@ -68,15 +68,15 @@
 			top: 45px;
   			left: -1px;
   			right: -1px;
-			background: $col-white;
-			border-left: 1px solid $col-black;
-			border-right: 1px solid $col-black;
-			border-bottom: 1px solid $col-black;
+			//background: $col-white;
+			//border-left: 1px solid $col-black;
+			//border-right: 1px solid $col-black;
+			//border-bottom: 1px solid $col-black;
 
 			a {
 
 				display: block;
-				padding: $baseline/2 $baseline/4;
+				//padding: $baseline/2 $baseline/4;
 			}
 		}
 	}

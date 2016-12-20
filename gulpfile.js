@@ -3,6 +3,7 @@
  */
 var gulp        = require('gulp');
 var del         = require('del');
+var sass        = require('gulp-sass');
 var rename      = require('gulp-rename');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
@@ -32,6 +33,10 @@ var PATHS = {
             dev: 'build.js'
         }
     },
+    styles: {
+        src: './src/styles/styles.scss',
+        dest: './dist/statics/css/'
+    },
     templates: {
         src: [
             './src/modules/**/*.html'
@@ -45,6 +50,13 @@ var PATHS = {
  */
 var cleanJS = function() {
     return del(PATHS.scripts.dest.path);
+};
+
+/**
+ * Clean CSS dist folder
+ */
+var cleanCSS = function() {
+    return del(PATHS.styles.dest);
 };
 
 /**
@@ -75,31 +87,47 @@ var scripts = function() {
 };
 
 /**
+ * Copy and minify styles to dist
+ */
+var styles = function() {
+    return gulp.src(PATHS.styles.src)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(PATHS.styles.dest))
+        .pipe(browserSync.stream());
+};
+
+
+/**
  * Copy HTML templates to dist
  */
 var templates = function() {
     return gulp.src(PATHS.templates.src)
-        .pipe(gulp.dest(PATHS.templates.dest))
+        .pipe(gulp.dest(PATHS.templates.dest));
 };
 
 var index = function() {
     return gulp.src(PATHS.index.src)
-        .pipe(gulp.dest(PATHS.index.dest))
+        .pipe(gulp.dest(PATHS.index.dest));
 };
 
 /**
  * Browser Sync
  */
 var serve = function() {
-
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
+};
 
+/**
+ * Watch task
+ */
+var watch = function() {
     gulp.watch(PATHS.index.src).on('change', browserSync.reload);
     gulp.watch(PATHS.scripts.src).on('change', browserSync.reload);
+    gulp.watch(PATHS.styles.src, ['styles']);
     gulp.watch(PATHS.templates.src).on('change', browserSync.reload);
 };
 
@@ -107,15 +135,18 @@ var serve = function() {
  * Enqueue functions
  */
 gulp.task('cleanJS', cleanJS);
+gulp.task('cleanCSS', cleanCSS);
 gulp.task('cleanTemplates', cleanTemplates);
 gulp.task('cleanIndex', cleanIndex);
 gulp.task('scripts', ['cleanJS'], scripts);
+gulp.task('styles', ['cleanCSS'], styles);
 gulp.task('templates', ['cleanTemplates'], templates);
 gulp.task('index', index);
 gulp.task('serve', serve);
+gulp.task('watch', watch);
 
 
 /**
  * Default gulp task
  */
-gulp.task('default', ['scripts', 'templates', 'index', 'serve']);
+gulp.task('default', ['scripts', 'styles', 'templates', 'index', 'serve', 'watch']);

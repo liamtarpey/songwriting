@@ -1,0 +1,61 @@
+.slider .inc, .slider .dec {
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  margin: 0 3px; }
+
+.metronome .metronome-btn.active {
+  background: green; }
+
+.metronome .timeline {
+  width: 100%;
+  display: flex; }
+  .metronome .timeline li {
+    width: 100%;
+    height: 3px;
+    position: relative; }
+    .metronome .timeline li .percentage {
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px; }
+    .metronome .timeline li .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -8px;
+      left: 0; }
+
+.metronome .time-signatures {
+  width: 200px;
+  position: relative; }
+  .metronome .time-signatures .dropdown {
+    position: absolute;
+    top: 45px;
+    left: -1px;
+    right: -1px; }
+    .metronome .time-signatures .dropdown a {
+      display: block; }
+
+@-webkit-keyframes percentage {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+
+@-moz-keyframes percentage {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+
+@keyframes percentage {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }

@@ -10,7 +10,7 @@
 
             // Home Page
             .when('/', {
-                templateUrl: './dist/statics/template/song/song.html',
+                templateUrl: '/dist/statics/templates/song/song.template.html',
                 controller: 'SongController',
                 controllerAs: 'Song'
             })

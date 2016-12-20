@@ -34143,7 +34143,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
             // Home Page
             .when('/', {
-                templateUrl: '/dist/template/song/song.html',
+                templateUrl: '/dist/statics/templates/song/song.template.html',
                 controller: 'SongController',
                 controllerAs: 'Song'
             })
